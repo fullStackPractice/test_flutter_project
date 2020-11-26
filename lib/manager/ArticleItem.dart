@@ -119,7 +119,7 @@ class ArticleItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-                        Icon(Icons.forward),
+                        Icon(Icons.keyboard_arrow_right),
                       ],
                     ),
                   ),
