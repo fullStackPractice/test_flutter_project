@@ -1,4 +1,4 @@
-# new_flutter_test
+# vscode_flutter_test
 
 A new Flutter project.
 
