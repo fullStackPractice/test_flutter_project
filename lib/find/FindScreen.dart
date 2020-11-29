@@ -1,9 +1,10 @@
 import 'dart:convert';
-// import 'dart:io';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:vscode_flutter/find/Company.dart';
 import 'package:vscode_flutter/find/CompanyItem.dart';
+import 'package:vscode_flutter/mine/SecondScreen.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:http/http.dart' as http;
 
@@ -64,21 +65,22 @@ class _FindScreenState extends State<FindScreen> {
       child: ListView.builder(
           itemCount: _companies.length,
           itemBuilder: (context, index) {
-            Company company = _companies[index];
-            return CompanyItem(company);
-            // var model = _companies[index];
-            // return InkWell(
-            //     onTap: () {
-            //       // Navigator.push(context,
-            //       //   new MaterialPageRoute(
-            //       //     builder: (context) => new SecondScreen(content: 'lllllll',)
-            //       //   )
-            //       // );
-            //       Navigator.of(context).pushNamed('/second').then((value) {
-            //         print(value);
-            //       });
-            //     },
-            //     child: ComponyItem(model));
+            // Company company = _companies[index];
+            // return CompanyItem(company);
+            var model = _companies[index];
+            return InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) => new SecondScreen(
+                                content: '暗号：原来还可以这么玩 $model',
+                              )));
+                  // Navigator.of(context).pushNamed('/second').then((value) {
+                  //   print(value);
+                  // });
+                },
+                child: CompanyItem(model));
           }),
     );
   }
