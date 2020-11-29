@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vscode_flutter_test/home.dart';
+import 'package:vscode_flutter/home.dart';
 
 void main() => runApp(MyApp());
 

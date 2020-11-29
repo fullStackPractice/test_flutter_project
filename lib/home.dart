@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:vscode_flutter_test/find/FindScreen.dart';
-import 'package:vscode_flutter_test/manager/ManagerScreen.dart';
-import 'package:vscode_flutter_test/mine/MineScreen.dart';
-import 'package:vscode_flutter_test/trend/TrendScreen.dart';
+import 'package:vscode_flutter/find/FindScreen.dart';
+import 'package:vscode_flutter/manager/ManagerScreen.dart';
+import 'package:vscode_flutter/mine/MineScreen.dart';
+import 'package:vscode_flutter/trend/TrendScreen.dart';
 
 class FlowerApp extends StatefulWidget {
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vscode_flutter_test/manager/Article.dart';
+import 'package:vscode_flutter/manager/Article.dart';
 
 class ArticleItem extends StatelessWidget {
   final Article model;

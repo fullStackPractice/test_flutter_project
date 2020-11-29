@@ -1,11 +1,12 @@
 import 'dart:convert';
-import 'dart:io';
+// import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:vscode_flutter_test/find/Company.dart';
-import 'package:vscode_flutter_test/find/CompanyItem.dart';
+import 'package:vscode_flutter/find/Company.dart';
+import 'package:vscode_flutter/find/CompanyItem.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:http/http.dart' as http;
+
 // 暗号: 原来还可以这么玩
 class FindScreen extends StatefulWidget {
   FindScreen({Key key}) : super(key: key);
@@ -29,7 +30,7 @@ class _FindScreenState extends State<FindScreen> {
 
   // http://m.app.haosou.com/index/getData?type=1&page=1
   getCompanyList2() async {
-    page++
+    page++;
     String url = 'http://m.app.haosou.com/index/getData?type=1&page=$page';
     var response = await http.get(url);
     var data = response.body;
@@ -63,24 +64,21 @@ class _FindScreenState extends State<FindScreen> {
       child: ListView.builder(
           itemCount: _companies.length,
           itemBuilder: (context, index) {
-            // Company company = _companies[index];
-            // return CompanyItem(company);
-            var model = _companies[index]
-            return InkWell(
-              onTap: () {
-                Navigator.push(context, 
-                  new MaterialPageRoute(
-                    builder: (context) => new SecondScreen(content: model,)
-                  )
-                );
-                // Navigator.of(context).pushNamed('/second').then(
-                //   (value){
-                //     print(value);
-                //   }
-                // );
-              },
-              child: ComponyItem(model)
-            )
+            Company company = _companies[index];
+            return CompanyItem(company);
+            // var model = _companies[index];
+            // return InkWell(
+            //     onTap: () {
+            //       // Navigator.push(context,
+            //       //   new MaterialPageRoute(
+            //       //     builder: (context) => new SecondScreen(content: 'lllllll',)
+            //       //   )
+            //       // );
+            //       Navigator.of(context).pushNamed('/second').then((value) {
+            //         print(value);
+            //       });
+            //     },
+            //     child: ComponyItem(model));
           }),
     );
   }
@@ -97,12 +95,12 @@ class _FindScreenState extends State<FindScreen> {
   _onRefresh() async {
     page = 0;
     _companies.clear();
-    await getCompanyList2()
+    await getCompanyList2();
     _refreshController.refreshCompleted();
   }
 
   _onLoading() async {
-    await getCompanyList2()
+    await getCompanyList2();
     _refreshController.loadComplete();
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vscode_flutter_test/manager/Article.dart';
-import 'package:vscode_flutter_test/manager/ArticleItem.dart';
+import 'package:vscode_flutter/manager/Article.dart';
+import 'package:vscode_flutter/manager/ArticleItem.dart';
 
 class ManagerScreen extends StatefulWidget {
   @override

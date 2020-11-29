@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vscode_flutter_test/find/Company.dart';
+import 'package:vscode_flutter/find/Company.dart';
 
 class CompanyItem extends StatelessWidget {
   final Company model;
