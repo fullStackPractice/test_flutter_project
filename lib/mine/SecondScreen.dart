@@ -1,50 +1,46 @@
-
 import 'package:flutter/material.dart';
 
-class SecondScreen extends StatelessWidget {
-  
+class SecondScreen extends StatefulWidget {
   final String content;
 
-  SecondScreen({this.content});  
+  SecondScreen(this.content);
+
+  @override
+  _SecondScreenState createState() => _SecondScreenState();
+}
+
+class _SecondScreenState extends State<SecondScreen> {
+  @override
+  void dispose() {
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: new Text('二级页面'), 
+        title: Text('二级页面'),
       ),
       body: Center(
         child: Column(
           children: <Widget>[
-            Text(
-              '入参是${this.content != null ? this.content:""}',
-              style: TextStyle(
-                fontSize: 30,
-                color: Colors.blue 
-              ), 
-            ),
             RaisedButton(
-                child: Text('返回1'),
-                onPressed: (){
-                  Navigator.of(context).pop('返回的数据');
-                  // Navigator.of(context).popUntil((route) => false)
-                }
-            ),
-            FlatButton(
-              onPressed: (){
-                Navigator.of(context).popAndPushNamed('/third');
-
-              }, 
-              child: Text('返回2'),
-            ),
-            FlatButton(
-              onPressed: (){
-                Navigator.of(context).pushReplacementNamed('/third');
-              }, 
-              child: Text('返回3'),
-            )
+                child: Text('返回方式一'),
+                onPressed: () {
+                  Navigator.of(context).pop('回传的数据');
+                }),
+            RaisedButton(
+                child: Text('返回方式二'),
+                onPressed: () {
+                  Navigator.of(context).popAndPushNamed('/third');
+                }),
+            RaisedButton(
+                child: Text('返回方式三'),
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed('/third');
+                })
           ],
-        ), 
+        ),
       ),
     );
   }
